@@ -1,13 +1,79 @@
 [
-  {"capability":"code","source":"GitHub actes-crm-cea5aa2e (TanStack Start, same template versions)","outcome":"migrate","status":"in_progress","next_action":"copy source tree"},
-  {"capability":"schema","source":"supabase/migrations (19 public tables, trigger)","outcome":"migrate","status":"pending","next_action":"apply migration in Lovable Cloud"},
-  {"capability":"records","source":"data/backup/*.json (latest) + data/*.csv (legacy orders, button locks)","outcome":"migrate","status":"pending","next_action":"sanitize + import"},
-  {"capability":"auth identities","source":"none - dashboard uses a shared password (DASHBOARD_PASSWORD)","outcome":"not_applicable","status":"verified","next_action":"none"},
-  {"capability":"uploaded file bytes","source":"data/files/crm-attachments (7 PDFs)","outcome":"migrate","status":"pending","next_action":"create private bucket crm-attachments and upload"},
-  {"capability":"public endpoints","source":"src/routes/api/public/* (n8n bot, acts-bridge, app-version, media)","outcome":"preserve","status":"pending","next_action":"verify after copy"},
-  {"capability":"secrets","source":"DASHBOARD_PASSWORD, BOT_INGEST_SECRET","outcome":"preserve","status":"pending","next_action":"request via secure form"},
-  {"capability":"AI gateway","source":"LOVABLE_API_KEY","outcome":"preserve","status":"pending","next_action":"auto-provisioned with Cloud"},
-  {"capability":"GitHub backup schedule","source":"/api/public/jobs/github-backup + GitHub connector","outcome":"preserve","status":"pending","next_action":"user reconnects GitHub connector; schedule after"},
-  {"capability":"n8n bot cutover","source":"n8n workflow calls https://actes-crm.lovable.app","outcome":"cutover","status":"pending","next_action":"user decides whether to point bot at this project after publish"},
-  {"capability":"verification","source":"-","outcome":"verify","status":"pending","next_action":"build, routes, data reads"}
+  {
+    "capability": "code",
+    "source": "GitHub actes-crm-cea5aa2e (TanStack Start, same template versions)",
+    "outcome": "migrate",
+    "status": "verified",
+    "next_action": "none"
+  },
+  {
+    "capability": "schema",
+    "source": "supabase/migrations (19 public tables, trigger)",
+    "outcome": "migrate",
+    "status": "verified",
+    "next_action": "none"
+  },
+  {
+    "capability": "records",
+    "source": "data/backup/*.json (latest) + data/*.csv (legacy orders, button locks)",
+    "outcome": "migrate",
+    "status": "verified",
+    "next_action": "none — 73 customers, 3876 messages, 111 items, 475 button locks, all tables imported"
+  },
+  {
+    "capability": "auth identities",
+    "source": "none - dashboard uses a shared password (DASHBOARD_PASSWORD)",
+    "outcome": "not_applicable",
+    "status": "verified",
+    "next_action": "none"
+  },
+  {
+    "capability": "uploaded file bytes",
+    "source": "data/files/crm-attachments (7 PDFs)",
+    "outcome": "migrate",
+    "status": "verified",
+    "next_action": "none — 41 files in crm-attachments; chat links rewritten to new storage"
+  },
+  {
+    "capability": "public endpoints",
+    "source": "src/routes/api/public/* (n8n bot, acts-bridge, app-version, media)",
+    "outcome": "preserve",
+    "status": "verified",
+    "next_action": "app-version and pages respond; bot endpoints need n8n cutover to be exercised"
+  },
+  {
+    "capability": "secrets",
+    "source": "DASHBOARD_PASSWORD, BOT_INGEST_SECRET",
+    "outcome": "preserve",
+    "status": "verified",
+    "next_action": "none"
+  },
+  {
+    "capability": "AI gateway",
+    "source": "LOVABLE_API_KEY",
+    "outcome": "preserve",
+    "status": "verified",
+    "next_action": "none"
+  },
+  {
+    "capability": "GitHub backup schedule",
+    "source": "/api/public/jobs/github-backup + GitHub connector",
+    "outcome": "preserve",
+    "status": "pending",
+    "next_action": "user reconnects GitHub connector; schedule after"
+  },
+  {
+    "capability": "n8n bot cutover",
+    "source": "n8n workflow calls https://actes-crm.lovable.app",
+    "outcome": "cutover",
+    "status": "pending",
+    "next_action": "user decides whether to point bot at this project after publish"
+  },
+  {
+    "capability": "verification",
+    "source": "-",
+    "outcome": "verify",
+    "status": "verified",
+    "next_action": "dashboard sign-in shows imported chats; 153 tests pass"
+  }
 ]
