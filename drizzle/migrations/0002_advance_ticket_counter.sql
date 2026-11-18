@@ -1,0 +1,1 @@
+SELECT setval('public.support_ticket_seq', GREATEST((SELECT COALESCE(MAX(NULLIF(regexp_replace(ticket_no, '\D', '', 'g'), '')::bigint), 1000) FROM public.support_tickets), 1000));

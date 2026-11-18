@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1795013648604,
+      "tag": "0000_import_actes_schema",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1795013672539,
+      "tag": "0001_add_orders_legacy",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1795013825804,
+      "tag": "0002_advance_ticket_counter",
+      "breakpoints": true
+    }
+  ]
+}
